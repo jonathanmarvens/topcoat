@@ -1,5 +1,4 @@
-<!doctype html>
-<html lang="en">
+<!doctype html> <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1"> <!-- Google Chrome Frame -->
@@ -11,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="../release/css/topcoat.css">
 </head>
 <body>
-
+<a id="runTestBtn" class="button">Run</a>
 <div id="test-container">
     <h4><span>Standard on White</span></h4>	
     <div class="bg-white guides">
@@ -508,6 +507,13 @@
 
 </div> <!-- end of #container -->
 
-
+    <script src="js/stressTest.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script>
+      $('#runTestBtn').click(function(){
+        stressTest.bookmarklet();
+      });
+    </script>
 </body>
 </html>
+
