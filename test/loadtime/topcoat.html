@@ -7,19 +7,9 @@
     <title>TopCoat Component Test</title>
     <script type="text/javascript" src="//use.typekit.net/tfw6uyb.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-<<<<<<< Updated upstream
-    <link rel="stylesheet" type="text/css" href="../../doc/css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="../../doc/css/styleguide.css">
-=======
     <link rel="stylesheet" type="text/css" href="../../../doc/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="../../../doc/css/styleguide.css">
->>>>>>> Stashed changes
     <link rel="stylesheet" type="text/css" href="../../release/css/topcoat.css">
-    <script>
-      window.startTime = window.performance.now ?
-                    (performance.now() + performance.timing.navigationStart) :
-                    Date.now();
-    </script>
 </head>
 <body>
 
@@ -595,40 +585,6 @@
 
             <div class="spinner large"></div>
         </div>
-<<<<<<< Updated upstream
-        <!-- end of .bg-slategray --> </div>
-    <!-- end of #container -->
-    <script src="../third_party/foundation/javascripts/jquery.js"></script>
-    <script type="text/javascript" src="../js/perf.js"></script>
-    <script>
-        var now = window.performance.now ?
-                        (performance.now() + performance.timing.navigationStart) :
-                        Date.now();
-        var time = now - window.startTime;
-        document.getElementById('restart').addEventListener('click', function(){
-          localStorage.clear();
-          location.reload();
-        }, false);
-        var i = localStorage.getItem('idx') || 0;
-        if(i<10) {
-          var timeArr = localStorage.getItem('timeArr') || null;
-          timeArr = (timeArr) ? JSON.parse(timeArr) : [];
-          timeArr.push(time);
-          timeArr = JSON.stringify(timeArr);
-          localStorage.setItem('timeArr', timeArr);
-          localStorage.setItem('idx', ++i);
-          $(document).ready(function(){
-            location.reload();
-          })
-        } else {
-          var timeArr = localStorage.getItem('timeArr');
-          timeArr = JSON.parse(timeArr);
-          t = timeArr.reduce(function(x,y){return x+y})/10;
-          alert('Average load time ' + t + 'ms in 10 reloads');
-        }
-    </script>
-=======
-
         <p>
             <h3>Do a
                 <a href="javascript:(function(d){var s=d.createElement('script');s.src='../third-party/stress-css/stressTest.js?_='+Math.random();var es=d.getElementsByTagName('script')[0];es.parentNode.insertBefore(s,es);var doit=function(){if(window.stressTest){stressTest.bookmarklet();}else{setTimeout(doit,100);}};doit();})(document);">Stress CSS
@@ -657,6 +613,5 @@
     <script src="../js/send-benchmark.js"></script>
     <script src="../js/perf.js"></script>
     <script src="../js/stress-css-send.js"></script>
->>>>>>> Stashed changes
 </body>
 </html>
