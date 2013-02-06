@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <!-- Google Chrome Frame -->
+    <title>TopCoat Component Test</title>
+    <style type="text/css">
+
+    	textarea {
+    		width:600px;
+    	}
+
+    </style>
+</head>
+<body>
+
+    <div id="test-container">
+        <h4>
+            <span>Standard on White</span>
+        </h4>
+        <div class="bg-white">
+            <a class="button" href="#">Call-to-Action Button</a>
+
+            <a class="button" href="#"> <i class="icon-xs example"></i>
+                Icon Label Button
+            </a>
+
+            <a class="button" href="#"> <i class="icon-xs example"></i>
+            </a>
+
+            <a class="button" href="#">Button</a>
+
+            <a class="button" href="#">
+                <i class="icon-xs example"></i>
+                Quiet Icon Label Button
+            </a>
+
+            <a class="button no-label" href="#">
+                <i class="icon-xs example"></i>
+            </a>
+
+            <a class="button" href="#">Quiet Button</a>
+
+            <span class="button drop-down">
+                Drop-down
+                <i class="drop-down-triangle"></i>
+                <ul class="menu">
+                    <li>
+                        <a href="#">Item 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Item 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Item 3</a>
+                    </li>
+                </ul>
+            </span>
+
+            <span class="button-group">
+                <a class="button" href="#">Split-Action</a>
+                <a class="button" href="#">
+                    <i class="drop-down-triangle"></i>
+                </a>
+                <ul class="menu">
+                    <li>
+                        <a href="#">Item 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Item 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Item 3</a>
+                    </li>
+                </ul>
+            </span>
+
+        <p>
+            <h3>Do a
+                <a href="javascript:(function(d){var s=d.createElement('script');s.src='./third-party/stress-css/stressTest.js?_='+Math.random();var es=d.getElementsByTagName('script')[0];es.parentNode.insertBefore(s,es);var doit=function(){if(window.stressTest){stressTest.bookmarklet();}else{setTimeout(doit,100);}};doit();})(document);">Stress CSS
+                </a>
+                <input type=checkbox disabled>
+                <button disabled id='submit'>Submit</button>
+            </h3>
+        </p>
+        <p>
+	        	<h3>Want to submit results?</h3>
+	        	<h4>Paste in the following bash command to determine your topcoat version</h4>
+	        	<textarea>git log --pretty=format:"%H %ai" | head -n 1</textarea>
+	        	<h4>Paste the result in the textarea</h4>
+	        	<p>
+	        		<textarea placeholder='Place the result here' class='topcoat-version'></textarea>
+	        	</p>
+        </p>
+        <div id="perf"></div>
+        <table></table>
+
+        <!-- end of .bg-slategray --> </div>
+    <!-- end of #container -->
+    <script src='./third-party/jquery/jquery-1.8.2.min.js'></script>
+    <script src="./third-party/ua-parser/ua-parser.js"></script>
+    <script>
+
+    	var commit
+    	,	date
+    	,	parser = new UAParser()
+		,	ua = parser.getResult()
+		,	device = ""
+		;
+		
+		for(var i in ua.device) // if there is any, usually works on mobile
+			if(ua.device[i]) device += ua.device[i] + ' ';
+
+		device = device.trim();
+
+    	$('.topcoat-version').on('keyup', function () {
+    		var val = $(this).val().trim().split(' ');
+    		commit = val.shift();
+    		date = val.join(' ');
+    		if(commit.length == 40 && date.length) {
+    			if(Date.parse(date)) {
+    				$('input[type=checkbox]').attr('disabled', false).attr('checked', 'true');
+    				$('#submit').attr('disabled', false);
+    			}
+    			else
+    				alert('Invalid Date');
+    		}
+    	});
+
+    	$('#submit').on('click', function () {
+    		var results = window.results;
+    		$.post("http://topcoat.herokuapp.com/stressCSS", { // used $.post since xhr doesn't work on android 2.2 from what I've seen
+	          baselineTime: results.baselineTime,
+	          commit: commit,
+	          date: date,
+	          selector: results.selector,
+	          device: device,
+	          ua: navigator.appVersion
+	        }).success(function(data){
+	          console.log(data);
+	        });
+
+    	});
+
+    </script>
+</body>
+</html>

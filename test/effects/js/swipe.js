@@ -34,6 +34,7 @@ var showPanel = function (idx) {
 	var pos = slideContainer.style.webkitTransform || 0;
 	if(pos) pos = parseInt(pos.slice(11, pos.length-3));
 	id = idx || round(pos/_slWidth);
+	slideContainer.style.webkitTransitionDuration = '.1s';
 	slideContainer.style.webkitTransform = 'translateX('+(_slWidth * id)+'px)';
 };
 

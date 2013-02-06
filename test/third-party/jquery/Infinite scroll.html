@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)http://localhost:8000/test/effects/infinite-page.html -->
+<html style="" class=" js cssanimations csstransforms csstransforms3d csstransitions websocketsbinary"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+	<title>Infinite scroll</title>
+	<link rel="stylesheet" type="text/css" href="./Infinite scroll_files/normalize.css">
+	<link rel="stylesheet" type="text/css" href="./Infinite scroll_files/style.css">
+	<link rel="stylesheet" href="http://localhost:8000/test/effects/css/infinite-style.css">
+	<script src="./Infinite scroll_files/modernizr.js"></script><style type="text/css"></style>
+<script src="./Infinite scroll_files/wips"></script></head>
+<body>
+
+<header>
+	<ul class="dark-header-bar">
+		<li>
+			<a class="home dark-button" href="http://localhost:8000/test/effects/infinite.html">Home</a>
+		</li>
+		<li>
+			<a href="http://localhost:8000/test/effects/infinite-page.html#">Some gallery name</a>
+		</li>
+	</ul>
+</header>
+
+<div id="main">
+	<ul class="content">
+		<li class="with-images"><img src="./Infinite scroll_files/thumb_3d04109daf268e304c06d1cd51436daf.jpg" width="110" height="110"><h5>Millenium Menu0</h5><p>by: Muhamed</p><p class="stats"> 57 views <em></em></p></li><li class="with-images"><img src="./Infinite scroll_files/thumb_3492b8cb965cbeb0142c8f6e11768cd7.png" width="110" height="110"><h5>Menu app1</h5><p>by: Alex</p><p class="stats"> 220 views <em>Working on menu app design. What do you think?</em></p></li><li class="with-images"><img src="./Infinite scroll_files/thumb_77de52532e2703942c8e9e2b2f1d2fe3.jpg" width="110" height="110"><h5>Blackcurrant Menu Design2</h5><p>by: Chris</p><p class="stats"> 53 views <em>I have been designing this Blackcurrant Menu, I think the front side is done? am i missing anything?</em></p></li><li class="with-images"><img src="./Infinite scroll_files/thumb_c0f8fb6546d4c88035de81faaf46eb84.jpg" width="110" height="110"><h5>Menu borad - handmade3</h5><p>by: Jan</p><p class="stats"> 36 views <em>http://www.facebook.com/media/set/?set=a.319825948109171.71465.295806037177829&amp;type=1</em></p></li><li class="with-images"><img src="./Infinite scroll_files/thumb_38e652b2b87e5710c5f9abb48fb999d7.png" width="110" height="110"><h5>Birthday menu4</h5><p>by: Hugo</p><p class="stats"> 59 views <em>Waiting for the approval...The first proposal was not appreciated.</em></p></li><li class="with-images"><img src="./Infinite scroll_files/thumb_672761d37c54627626bdc67784074c8b.jpg" width="110" height="110"><h5>Restaurant Menu Cover5</h5><p>by: Steve</p><p class="stats"> 75364 views <em>these are a couple of designs for the frosted glass panels on the ladies and gents doors. They wanted a different style to go with the more eclectic feel of the restaurant.</em></p></li><li class="with-images"><img src="./Infinite scroll_files/thumb_2b69b6d6fa2470fe754da1b8715d01db.jpg" width="110" height="110"><h5>iOS Menu6</h5><p>by: Bryan</p><p class="stats"> 44 views <em>Client asked for a Facebook like menu. This is my version of the menu so far. This menu will be used for both iOS and Android.</em></p></li><li class="with-images"><img src="./Infinite scroll_files/thumb_26551adbcc714f1780df70eba04f0a2c.jpg" width="110" height="110"><h5>kamona menu7</h5><p>by: mohamed</p><p class="stats"> 44 views <em>soon</em></p></li><li class="with-images"><img src="./Infinite scroll_files/thumb_3790ee14abdb73455ebbfb7b687a1a6f.jpg" width="110" height="110"><h5>La Bodega : Tapas Menu Design8</h5><p>by: Melinda</p><p class="stats"> 85 views <em>Redesigning the menu into a new trendy, young and vibrant look.</em></p></li><li class="with-images"><img src="./Infinite scroll_files/thumb_e0dc89bfda13db73be0836c21c1d8960.jpg" width="110" height="110"><h5>roastery menu9</h5><p>by: nada</p><p class="stats"> 11 views <em></em></p></li><li class="with-images"><img src="./Infinite scroll_files/thumb_6f4721093866159a38e2a31c29989911.jpg" width="110" height="110"><h5>Unwind Cafe Menu Design10</h5><p>by: William</p><p class="stats"> 91 views <em>Back of a folded menu.</em></p></li><li class="with-images"><img src="./Infinite scroll_files/thumb_2e06efa15af5ab2145eb189c17ab4571.jpg" width="110" height="110"><h5>Palace Menu11</h5><p>by: Hamed</p><p class="stats"> 4 views <em>i try to finish it but i have alot of pressure coz i dont have alot of time</em></p></li><li class="loading">
+			Pull to update <img src="./Infinite scroll_files/loading.png" class="spinner">
+		</li>
+	</ul>
+</div>
+
+<script src="./Infinite scroll_files/infinite-script.js"></script>
+<script>
+	var url = 'http://www.behance.net/v2/wips?q=menu&api_key=xAnM4Y00DgN7lOf1XgIEASh9BdazmvzQ&page=';
+	var data;
+	var page = 1;
+	var count = 0;
+	var fetching = 0;
+	var stop = 0;
+
+	function documentHeight() {
+		return Math.max(
+			Math.max(document.body.scrollHeight, document.documentElement.scrollHeight),
+			Math.max(document.body.offsetHeight, document.documentElement.offsetHeight),
+			Math.max(document.body.clientHeight, document.documentElement.clientHeight)
+		);
+	}
+
+	var getJSONP = url + page + "&callback=JSONPCallback";
+	jsonp.fetch(getJSONP, function(d) {
+		data = d.wips;
+		createListWithImages(data);
+	});
+
+
+	window.addEventListener('scroll', function(){
+		var pageHeight = document.documentElement.clientHeight;
+		var scrollPosition = window.pageYOffset;
+		var docHeight = documentHeight();
+		if (pageHeight + scrollPosition > docHeight - 70 && !stop) {
+			var getJSONP = url + page + "&callback=JSONPCallback";
+			jsonp.fetch(getJSONP, function(d) {
+				data = d.wips;
+				if(!d.wips.length) {
+					document.querySelector('.loading').innerHTML = 'That was the last result';
+					stop = 1;
+				} else {
+					createListWithImages(d.wips);
+					page++;
+				}
+			});
+		} else {
+			console.log(pageHeight + scrollPosition, docHeight, stop);
+		}
+
+
+	}, false);
+
+</script>
+
+
+</body></html>
