@@ -1,0 +1,17 @@
+{
+  "name": "button",
+  "repo": "topcoat/button",
+  "description": "TopCoat button base",
+  "version": "0.0.0",
+  "keywords": [],
+  "dependencies": {},
+  "development": {},
+  "license": "Apache",
+  "files": [
+    "style/button.styl"
+  ],
+  "styles": [
+    "release/button.css",
+    "release/button-min.css"
+  ]
+}

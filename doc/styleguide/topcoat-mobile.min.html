@@ -1,0 +1,313 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Style Guide</title>
+    <style type="text/css">
+      .container {
+        font: 13px/1.4 Helvetica, arial, sans-serif;
+        color: #333;
+        width: 920px;
+        margin: 0 auto;
+        padding: 48px 0;
+        zoom: 1;
+      }
+      .container:after {
+        display: block;
+        clear: both;
+        content: ' ';
+      }
+      .menu-container {
+        float: left;
+        width: 200px;
+        padding: 3px;
+        background: #efefef;
+        border-radius: 2px;
+      }
+      .menu {
+        margin: 0;
+        padding: 0;
+        background: #fafafb;
+        border-radius: 2px;
+        border: 1px solid #d8d8d8;
+        list-style: none;
+      }
+      .menu li {
+        margin: 0;
+        padding: 0;
+        border-top: 1px solid white;
+        border-bottom: 1px solid #eee;
+      }
+      .menu li:first-child {
+        border-top: none;
+      }
+      .menu a {
+        display: block;
+        text-decoration: none;
+        color: #4183c4;
+        padding: 8px 10px 8px 8px;
+        text-shadow: 0 1px 0 white;
+        border-left: 2px solid #fafafb;
+      }
+      .menu .active a {
+        background: white;
+        border-left: 2px solid #d26911;
+        font-weight: bold;
+        color: #222;
+        cursor: default;
+        box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.1);
+      }
+      .styleguide {
+        float: right;
+        width: 700px;
+      }
+      .section {
+        border: 1px solid #ddd;
+        border-top-color: #333;
+        margin-bottom: 30px;
+      }
+      .section-title {
+        margin: 0;
+        padding: 4px 10px;
+        color: white;
+        font-size: 12px;
+        text-transform: uppercase;
+        background: #333;
+      }
+      .section-body {
+        padding: 1px 10px;
+        background: #f1f1f1;
+        border-bottom: 1px solid #ddd;
+      }
+      .example {
+        position: relative;
+        padding: 20px;
+        border-top: 1px solid #eee;
+      }
+      .example-name {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: #999;
+        background: #f9f9f9;
+        font-size: 11px;
+        padding: 5px 15px;
+        border-left: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+      }
+      .section-html {
+        padding: 15px;
+        background: #edf6f8;
+        border-top: 1px solid #dde7ea;
+        overflow: auto;
+      }
+      .highlight pre {
+        color: #666;
+        font-family: Consolas, "Liberation Mono", Courier, monospace;
+      }
+      .highlight .tag {
+        color: #268bd2;
+      }
+      .highlight .attribute {
+        color: #b58900;
+      }
+      .highlight .value {
+        color: #2aa198;
+      }
+      .button,.button--quiet,.button--large{position:relative;display:inline-block;padding:0 .75em;margin:0;overflow:hidden;font:inherit;color:inherit;text-align:center;text-decoration:none;text-overflow:ellipsis;white-space:nowrap;vertical-align:middle;cursor:pointer;background:transparent;border:none;box-sizing:border-box;background-clip:padding-box;user-select:none}
+.button--quiet{background-color:transparent;border:1px solid transparent;box-shadow:none}
+/*
+Copyright 2012 Adobe Systems Inc.;
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+.button,.button--quiet,.button--large,.topcoat-button,.topcoat-button--quiet{position:relative;display:inline-block;padding:0 .75em;margin:0;overflow:hidden;font:inherit;color:inherit;text-align:center;text-decoration:none;text-overflow:ellipsis;white-space:nowrap;vertical-align:middle;cursor:pointer;background:transparent;border:none;box-sizing:border-box;background-clip:padding-box;user-select:none}
+.button--quiet,.topcoat-button--quiet{background-color:transparent;border:1px solid transparent;box-shadow:none}
+/*
+// 1.0 TopCoat Button
+//
+//
+// :active - Button hover state
+// .is-pressed - Button down state
+//
+// Examples:
+//
+//    <button class="topcoat-button">Button</button>
+//    <a href="#" class="topcoat-button" role="button">Button</a>
+// :active
+//    <button class="topcoat-button is-pressed">Button</button>
+//    <a href="#" class="topcoat-button is-pressed" role="button">Button</a>
+*/
+.topcoat-button{height:48px;padding:0 20px;margin:5px 5px;font-size:var-font-size;line-height:var-line-height;letter-spacing:var-letter-spacing;color:var-color;text-shadow:var-text-shadow;vertical-align:var-vertical-align;background-color:var-background-color;border:var-border;border-radius:6px;}
+.topcoat-button:active,.topcoat-button .is-pressed{background-color:var-background-color-down;box-shadow:var-box-shadow-down}
+/*
+// 1.1 TopCoat Quiet Button
+//
+//
+// :active - Quiet button hover state
+// .is-pressed - Quiet button down state
+//
+// Examples:
+//
+//    <button class="topcoat-button--quiet">Button</button>
+//    <a href="#" class="topcoat-button--quiet" role="button">Button</a>
+// :active
+//    <button class="topcoat-button--quiet is-pressed">Button</button>
+//    <a href="#" class="topcoat-button--quiet is-pressed" role="button">Button</a>
+*/
+.topcoat-button--quiet:active,.topcoat-button--quiet .is-pressed{color:var-color;text-shadow:var-text-shadow;background-color:var-background-color;border:var-border;box-shadow:var-box-shadow-down}
+.button,.button--quiet,.button--large{position:relative;display:inline-block;padding:0 .75em;margin:0;overflow:hidden;font:inherit;color:inherit;text-align:center;text-decoration:none;text-overflow:ellipsis;white-space:nowrap;vertical-align:middle;cursor:pointer;background:transparent;border:none;box-sizing:border-box;background-clip:padding-box;user-select:none}
+.button--quiet{background-color:transparent;border:1px solid transparent;box-shadow:none}
+/*
+Copyright 2012 Adobe Systems Inc.;
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+.button,.button--quiet,.button--large,.topcoat-button,.topcoat-button--quiet{position:relative;display:inline-block;padding:0 .75em;margin:0;overflow:hidden;font:inherit;color:inherit;text-align:center;text-decoration:none;text-overflow:ellipsis;white-space:nowrap;vertical-align:middle;cursor:pointer;background:transparent;border:none;box-sizing:border-box;background-clip:padding-box;user-select:none}
+.button--quiet,.topcoat-button--quiet{background-color:transparent;border:1px solid transparent;box-shadow:none}
+/*
+// 1.0 TopCoat Button
+//
+//
+// .pseudo-class-active - Button hover state
+// .is-pressed - Button down state
+//
+// Examples:
+//
+//    <button class="topcoat-button">Button</button>
+//    <a href="#" class="topcoat-button" role="button">Button</a>
+// .pseudo-class-active
+//    <button class="topcoat-button is-pressed">Button</button>
+//    <a href="#" class="topcoat-button is-pressed" role="button">Button</a>
+*/
+.topcoat-button{height:48px;padding:0 20px;margin:5px 5px;font-size:var-font-size;line-height:var-line-height;letter-spacing:var-letter-spacing;color:var-color;text-shadow:var-text-shadow;vertical-align:var-vertical-align;background-color:var-background-color;border:var-border;border-radius:6px;}
+.topcoat-button.pseudo-class-active,.topcoat-button .is-pressed{background-color:var-background-color-down;box-shadow:var-box-shadow-down}
+/*
+// 1.1 TopCoat Quiet Button
+//
+//
+// .pseudo-class-active - Quiet button hover state
+// .is-pressed - Quiet button down state
+//
+// Examples:
+//
+//    <button class="topcoat-button--quiet">Button</button>
+//    <a href="#" class="topcoat-button--quiet" role="button">Button</a>
+// .pseudo-class-active
+//    <button class="topcoat-button--quiet is-pressed">Button</button>
+//    <a href="#" class="topcoat-button--quiet is-pressed" role="button">Button</a>
+*/
+.topcoat-button--quiet.pseudo-class-active,.topcoat-button--quiet .is-pressed{color:var-color;text-shadow:var-text-shadow;background-color:var-background-color;border:var-border;box-shadow:var-box-shadow-down}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="menu-container">
+        <ol class="menu">
+          <li><a href="../styleguide/topcoat-mobile.html">Topcoat-mobile</a></li>
+          <li class="active"><a href="../styleguide/topcoat-mobile.min.html">Topcoat-mobile.min</a></li>
+        </ol>
+      </div>
+      <div class="styleguide">
+        <div class="section">
+          <h3 class="section-title">
+            <span class="section-name">1.0</span>
+            <span class="section-title">TopCoat Button</span>
+          </h3>
+          <div class="section-body">
+            <p>.is-pressed - Button down state</p>
+
+            <ul class="modifier">
+              <li><strong>:active</strong> - Button hover state</li>
+            </ul>
+          </div>
+          <div class="example">
+ <button class="topcoat-button">Button</button>
+<a href="#" class="topcoat-button" role="button">Button</a>
+:active
+<button class="topcoat-button is-pressed">Button</button>
+<a href="#" class="topcoat-button is-pressed" role="button">Button</a>
+
+          </div>
+          <div class="example">
+            <span class="example-name">:active</span>
+ <button class="topcoat-button">Button</button>
+<a href="#" class="topcoat-button" role="button">Button</a>
+:active
+<button class="topcoat-button is-pressed">Button</button>
+<a href="#" class="topcoat-button is-pressed" role="button">Button</a>
+
+          </div>
+          <div class="section-html">
+            <div class="highlight"><pre><code class="xml"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"topcoat-button"</span>&gt;</span>Button<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+<span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span> <span class="attribute">class</span>=<span class="value">"topcoat-button"</span> <span class="attribute">role</span>=<span class="value">"button"</span>&gt;</span>Button<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+:active
+<span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"topcoat-button is-pressed"</span>&gt;</span>Button<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+<span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span> <span class="attribute">class</span>=<span class="value">"topcoat-button is-pressed"</span> <span class="attribute">role</span>=<span class="value">"button"</span>&gt;</span>Button<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+</code></pre></div>
+          </div>
+        </div>
+        <div class="section">
+          <h3 class="section-title">
+            <span class="section-name">1.1</span>
+            <span class="section-title">TopCoat Quiet Button</span>
+          </h3>
+          <div class="section-body">
+            <p>.is-pressed - Quiet button down state</p>
+
+            <ul class="modifier">
+              <li><strong>:active</strong> - Quiet button hover state</li>
+            </ul>
+          </div>
+          <div class="example">
+ <button class="topcoat-button--quiet">Button</button>
+<a href="#" class="topcoat-button--quiet" role="button">Button</a>
+:active
+<button class="topcoat-button--quiet is-pressed">Button</button>
+<a href="#" class="topcoat-button--quiet is-pressed" role="button">Button</a>
+
+          </div>
+          <div class="example">
+            <span class="example-name">:active</span>
+ <button class="topcoat-button--quiet">Button</button>
+<a href="#" class="topcoat-button--quiet" role="button">Button</a>
+:active
+<button class="topcoat-button--quiet is-pressed">Button</button>
+<a href="#" class="topcoat-button--quiet is-pressed" role="button">Button</a>
+
+          </div>
+          <div class="section-html">
+            <div class="highlight"><pre><code class="xml"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"topcoat-button--quiet"</span>&gt;</span>Button<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+<span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span> <span class="attribute">class</span>=<span class="value">"topcoat-button--quiet"</span> <span class="attribute">role</span>=<span class="value">"button"</span>&gt;</span>Button<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+:active
+<span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"topcoat-button--quiet is-pressed"</span>&gt;</span>Button<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+<span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span> <span class="attribute">class</span>=<span class="value">"topcoat-button--quiet is-pressed"</span> <span class="attribute">role</span>=<span class="value">"button"</span>&gt;</span>Button<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+</code></pre></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
